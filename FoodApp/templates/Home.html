@@ -1,0 +1,39 @@
+{% extends 'Base.html' %}
+
+{% block content%}
+
+    <div class="container">
+
+        <p> you are inside the home page</p>
+
+        <table class="table table_strip">
+            <thead>
+                <tr>
+                    <th>Nmae</th>
+                    <th>Carbs</th>
+                    <th>Proteins</th>
+                    <th>Facts</th>
+                    <th>Calories</th>
+                    <th>Calcium</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for f in food %}
+                <tr>
+                    <td>{{ f.name }}</td>
+                    <td>{{ f.carbs  }}</td>
+                    <td>{{ f.proteins }}</td>
+                    <td>{{ f.facts }}</td>
+                    <td>{{ f.calories }}</td>
+                    <td>{{ f.calcium }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>    
+        </table> 
+        <h3>select your food<h3>
+            <from action="#" method="post">
+                {% csrf_token %}  
+                     
+    </div>
+
+{% endblock %}    
